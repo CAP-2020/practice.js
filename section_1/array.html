@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrayとコールバック関数</title>
+
+  
+</head>
+<body>
+  
+  <script>
+    const fruits = [
+      'りんご',
+      'バナナ'
+    ];
+    console.log(fruits);   //りんご、バナナ
+
+    fruits.push('みかん');  //〜.push()で配列を追加する事が出来る。
+    console.log(fruits);   //りんご、バナナ、みかん
+
+
+    // <コールバック関数>   //forEachは与えられた関数を1個づづ実行する。
+    fruits.forEach((input) => {   //りんご、バナナ、みかん の要素を1個づづ取得！
+      console.log(input);
+    });
+
+    // コールバック関数は無名関数。名前のない関数で、一回使い切りの関数。
+    // アロー関数には①無名関数と②普通の関数がある
+
+    // ①アロー関数：名前あり
+    const getItem = () => {console.log('アロー')}
+    const getItem2 =() => console.log('アロー2！')  //処理が1行→{}不要。引数1個→(),return不要。
+
+    getItem();
+    getItem2();
+
+    // アロー関数：名前なし
+    fruits.forEach(input => console.log(input));
+    
+
+
+    // <array.filter>...配列に条件をつけて新しい配列を作る。
+    const scores = [10,20,30];
+
+    const newScores = scores.filter((value) => {
+      return value >= 30;
+    });
+    console.log(newScores);
+
+    // <array.find();>  ...配列の中の条件に合うモノを表示させる。
+    const members = ['本田','香川','長友'];
+    const member = members.find(value => value === '長友')
+    console.log(member);  
+
+
+
+    // <array.map>  ・・・配列を元に新しい配列を作る。mapオブジェクトとは違う！
+    
+    const userList = [10,20,30,40];
+    // テンプレート文字列！ => `{}`を使うと文字と数字をくっつける事が出来る。
+    const userIdList = userList.map(value => {
+      return `user_${value}`                    //`user_　＋　${}`でuser_10,20,30,40となる。
+    });
+  //const userIdList = userList.map(value => `user_${value}`);  // => コレでもOK！
+    console.log(userIdList);
+    console.table(userIdList);
+
+    
+
+
+
+
+  </script>
+</body>
+</html>

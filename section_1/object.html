@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オブジェクト-Object</title>
+</head>
+<body>
+  <script>
+
+    //<Objectでプロパティー（値）を組み込む！>
+
+    // const test = new object();
+
+    // 簡単な書き方！
+    const test = {
+      name: '本田',
+      age: 20,
+      Number: 30
+    };
+
+    console.log(test)
+
+    //値を取りたい時。object.valuesメソットを使う。   ...valuesメソットを使うとvalueを取得できる。
+    // string,arrayではtest.methodと付けてたがobjectの場合は違ってる。
+    console.log(Object.values(test));   //object.method(定数名)で取得。
+
+    // また、for文を使うと配列の値を1個づつ取得できる。
+    for (value of Object.values(test)){  //one of them ~   //Objectは大文字で！！
+      console.log(value);
+    };
+
+
+    // <object-Objectのメソット関数>
+    const postalcode = '123-4567';
+    const replaced = replaceString.replace('-','');
+    const length = replaced.length;
+    if ()
+
+
+
+  </script>
+</body>
+</html>
