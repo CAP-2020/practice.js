@@ -12,7 +12,7 @@ for (score of scores){
 
 
 // for文  => for (初期値; 繰り返す条件式; 増減++;){}で表す。　　＊ 繰り返す回数を決めたい場合はこれを使う
-
+ 
 for (let i = 0; i < 10; i++){  // 0~　10より少ない数をconsole.logに表示。
   console.log(i);
 };

@@ -31,11 +31,65 @@
     };
 
 
-    // <object-Objectのメソット関数>
-    const postalcode = '123-4567';
-    const replaced = replaceString.replace('-','');
-    const length = replaced.length;
-    if ()
+
+
+
+    // <ユーザー定義関数・組み込み関数> 
+    
+    const postal = {                  //postalオブジェクトの中にpostalCodeCheckerを定義。
+      postalCode : '123-4567',
+      
+      checkPostalCode(){
+        // const replaced = string.replace('-','');  //replaceメソットで - を消す。
+        // オブジェクトの中の値を、オブジェクトの中の関数に反映させるときはthisを使う！ this.postalCode
+        const replaced = this.postalCode.replace('-','').length;
+        // const length = replaced.length;  //文字の数を取得。
+
+        if(replaced === 7){    //if文で郵便番号。7文字判定をかける。
+          return true;
+        }
+        return false;
+      }
+    };
+
+    //簡略化 - その1  
+//     const postal = {
+//     postalCode :'123-4567', 
+//   checkPostalCode(string) {
+//     return string.replace('-', '').length === 7;
+//   }
+// };
+    console.log(postal.checkPostalCode());  //オブジェクト名.関数名(引数)になっている。
+    // console.log(postal.postalcode);
+    
+
+    // function checkPostalCode(string){  //stringにpostalCodeが引数として入る様に設定する。
+    // //   const replaced = string.replace('-','');  //replaceメソットで - を消す。
+    // //   const length = replaced.length;  //文字の数をとる。
+
+    // //  if(length === 7){  //if文で郵便番号。7文字判定をかける。
+    // //   return true;
+    // //  }
+    // //  return false;
+    // // }
+    
+// <メソットチェーン　return this>
+    const person = {
+      name : '本田',
+      age  : 30,
+
+      getName(){
+        console.log(this.name);
+        return this   //次のメソット呼び出しの為に使われる。この場合はgetAge();の呼び出し！
+      },
+
+      getAge(){
+        console.log(this.age);
+        return this
+      }
+    };
+
+    person.getName().getAge();
 
 
 

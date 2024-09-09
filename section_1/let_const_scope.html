@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>31:変数・定数スコープ</title>
+</head>
+<body>
+
+  <script>
+    //定数・変数の有効範囲はグローバルとローカルの2種類ある。
+    //ネット環境全てに影響するグローバル環境とそれぞれの場所でのみ有効になるローカルの2つ！
+    
+    // グローバル→関数の外で設定してる変数・定数は関数の中でも、外でも使える。
+    //関数の中で設定してる
+    const globalVariable = 'グローバル';
+    
+    
+    // 関数の中で作った変数・定数は、基本的には関数の中でしか使えない。
+    // ローカル環境で作った変数・定数は関数の外では使えない。
+    //checkScopeの中のconst localVariableは関数の外のconsole.log(localVariable)ではエラーになる。
+    function checkScope(){
+      const localVariable = 'ローカル';
+
+      console.log(localVariable);
+      console.log(globalVariable);
+    }
+
+    checkScope();  //関数呼び出し。
+    // console.log(globalVariable);
+    console.log(localVariable);
+  </script>
+</body>
+</html>

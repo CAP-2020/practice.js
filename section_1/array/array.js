@@ -10,7 +10,7 @@ const array_2 = [
   ["緑","紫","黒"]
 ];
 
-console.log(array_2);        //全ての要素を取得。
+console.log(array_2);         //全ての要素を取得。
 console.log(array_2[1][2]);  //1列目→2番目、2列目→3番目を取るから。→黒を取る事になる。
 
 
