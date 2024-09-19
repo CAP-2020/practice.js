@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>41_イベントの設定3種類</title>
+    <style>
+      .red{
+        color:red;
+      };
+      .blue{
+        color: blue;
+      };
+    </style>
+  
+</head>
+<body>
+
+<div id="test">
+  <!-- <button id="target" onclick="change_color()">推してね！</button> -->
+  <button id="target">推してね！</button>
+  
+</div>
+
+
+  <script>
+    // 1つ目。HTMLに onclick="change_color()"とつける。
+    // function change_color (){
+    //   const test = document.getElementById('test');
+    //   test.textContent = 'テスト';
+    //   test.classList.add('red');
+    // }
+
+    //・ボタンを押すと”テスト”と言う表示を出す → divタグに文字テキストを追加しクリックイベントを設定。
+    
+    
+
+    // document.getElementById('target').onclick = function(){
+    //   const test = document.getElementById('test');
+    //   test.textContent = 'テスト';
+    //   test.classList.add('red');
+    // }
+    
+
+    const target = document.getElementById('target');
+    target.addEventListener('click',(e) => {
+      console.log(e)
+      const test = document.getElementById('test');
+      test.textContent = 'テスト';
+      test.classList.add('red');
+    })
+
+
+  </script>
+</body>
+</html>

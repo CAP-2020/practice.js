@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>38.クラスを足したり外したり</title>
+  <style>
+    .red{
+      color:red;
+    }
+
+    .blue{
+      color:blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="test">
+    <ul>
+      
+      <li class="test_list blue">テスト1</li>  <!--① 最初の文字だけ、classで青をつけてる-->
+      <li class="test_list">テスト2</li>
+      <li class="test_list">テスト3</li>
+    </ul>
+  </div>
+
+  <script>
+    //const test = document.getElementById('test');  //返り値element なので。.classList,toggleなどでくっつける。
+    const test = document.getElementById('test').classList.add('red');  //①があるので。テスト1→青。テスト2、3→赤
+    // test.classList.add('red');  //classをつける。→赤色:追加
+
+    // const testList = document.querySelector('.test_list');
+    // testList.classList.remove('blue');  //classを外す。→青:削除
+
+    // const testLists = document.querySelectorAll('.test_list');
+    // console.log(testLists);
+  </script>
+</body>
+</html>

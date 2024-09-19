@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>40:変化させたい要素を指定する</title>
+  <style>
+    .red{
+      color: red;
+    };
+    .blue{
+      color: blue;
+    };
+  </style>
+</head>
+<body>
+  <div id="ground-father">
+    <div id="parent">
+      <div id="target">自分</div>
+    </div>
+  </div>
+
+  <div id="divList">
+    <div class="div1">テスト1</div>
+    <div class="div2">テスト2</div>
+    <div class="div3">テスト3</div>
+  </div>
+
+  <script>
+
+    // appendChildで要素をHTMLに反映する！
+    const target = document.getElementById('target');
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('red');
+    newDiv.textContent = 'テスト'
+    // target.appendChild(newDiv);  //targetの階層の子要素にnewDivが配置される。
+    target.parentNode.appendChild(newDiv);  //parentNodeを挟むと1個上の階層で要素を追加できる！
+
+    // id="divList"を基準に取得し。divListに要素をつけようとすると。"div4"は”div3”の後に設置される事になる。
+    // div4を任意の場所に配置するには、insertBeforeメソットを使う。 そこで・・・。
+    // 基準を取得→割り込む場所を取得→新しい要素を設定→新しい要素.insertBeforeで要素を割り込む。
+    // => insertBeforeはnewElementとreferenceを設定する必要がある。新しい要素と入れ込む要素を取得する。
+    
+    const targetList = document.getElementById('divList');  //id="divList"を取得。
+    // const reference = document.querySelector('.div1');  //.でclassを取得。
+    //nextElementSiblingで同じ親要素を持ってる次の要素を取得できる。↓↓使い方は。『.で繋げる。』
+    const reference = document.querySelector('.div1').nextElementSibling;
+    // console.log(reference);
+    // console.log(targetList);
+    const newElement = document.createElement('div');
+    newElement.classList.add('div4');
+    newElement.textContent = '追加分です。';
+    targetList.insertBefore(newElement,reference)
+    // console.log(reference)
+
+    
+    
+
+  </script>
+</body>
+</html>

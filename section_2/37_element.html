@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>37.要素の取得！</title>
+  
+</head>
+<body>
+  <div id="test" class="test_list"><ul>  <!-- ① divタグにlistタグの子要素を設置したもの。 -->
+    <li>テスト1</li>
+    <li>テスト2</li>
+    <li>テスト3</li>
+  </ul>
+  </div>
+
+  <div id="test_2"><ul>                   <!-- ② liタグにclassを振っている場合！ -->
+    <li class="test_list_2">テスト1</li>
+    <li class="test_list_2">テスト2</li>
+    <li class="test_list_2">テスト3</li>
+  </ul>
+  </div>
+
+
+  <script>
+    // ①
+    const test = document.getElementById('test');          //①id='test'を取得。 
+    const testList = document.querySelector('.test_list')  //①class testListを取得。
+    console.log(test);                                     //①/id='test'をconsoleで呼び出し！
+    console.log(testList);                                 //①class testListをconsoleで呼び出し！
+
+    //②
+    const testList_2 = document.querySelector('.test_list_2');
+    //②querySelectorでclassのtest_list_2の1番最初の要素を取得。
+    console.log(testList_2);                                //②querySelectorで取得した要素をconsoleで出力。
+
+    const testLists = document.querySelectorAll('.test_list_2');
+    console.log(testLists);
+
+
+  </script>
+</body>
+</html>

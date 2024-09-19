@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>39.要素や属性の作り方・付け方</title>
+  <style>
+    .red{
+      color: red;
+    }
+    .blue{
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <input id="test">あああ</input>
+  
+
+  <script>
+    const input = document.getElementById('test');
+    input.type = 'text';
+    input.placeholder = 'あああ';
+    input.name = 'test';
+    input.textContent = 'テストです';
+
+    console.log(input);
+
+    // タグを作る
+    const anchor = document.createElement('a');
+    // anchor.type = 'text';
+    // input.placeholder = 'あああ';
+
+    anchor.href = 'https://google.com';
+    anchor.target = '_blank';
+
+    console.log(anchor);
+
+
+  </script>
+</body>
+</html>
